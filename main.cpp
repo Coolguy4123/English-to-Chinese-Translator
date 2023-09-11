@@ -72,25 +72,26 @@ void add_pinyin(unordered_map<string,string>&p) {
   p["your"] = "nǐ de";
   p["love"] = "aì";
   p["he"] = "tā";
-  p["she"] = "她";
-  p["we"] = "我們";
-  p["hi"] = "你好";
-  p["hello"] = "你好";
-  p["Hi"] = "你好";
-  p["my"] = "我的";
-  p["name"] = "名字";
-  p["will"] = "會";
-  p["if"] = "如果";
-  p["have"] = "有";
-  p["and"] = "和";
-  p["a"] = "個";
-  p["human"] = "人";
-  p["friend"] = "朋友";
-  p["are"] = "是";
-  p["they"] = "他們";
-  p["us"] = "我們";
-  p["no"] = "不";
-  p["not"] = "不是";
+  p["she"] = "tā";
+  p["we"] = "wǒ men";
+  p["hi"] = "nǐ hǎo";
+  p["hello"] = "nǐ hǎo";
+  p["Hi"] = "nǐ hǎo";
+  p["my"] = "wǒ de";
+  p["name"] = "míng zì";
+  p["will"] = "huì";
+  p["if"] = "rú guǒ";
+  p["have"] = "yǒu";
+  p["and"] = "hé";
+  p["a"] = "gè";
+  p["human"] = "rén";
+  p["friend"] = "péng yǒu";
+  p["are"] = "shì";
+  p["they"] = "tā men";
+  p["us"] = 
+"wǒ men";
+  p["no"] = "bù";
+  p["not"] = "bù shi";
   
 }
 int main() {
@@ -101,11 +102,12 @@ int main() {
   bool repeat = true;
 
   
-  cout << "Enter a sentence to be translated into Chinese. If have punchiations, please put spaces between it and the words, type 'ns' to stop program\n ";
+  cout << "Enter a sentence to be translated into Chinese. If have punchiations, please put spaces between it and the words, type 'ns' to stop program\n\n";
   while(true){
     string sentence;
     cout << "Enter sentence:" << endl;
     getline(cin,sentence);
+    cout << endl;
     string ans="",pinyin="";
     if(sentence == "ns"){
       break;
@@ -115,7 +117,7 @@ int main() {
   }
   ans += process(m,sentence);
   pinyin += addp(p,sentence);
-  cout << "Chinese Characters: " << ans << endl;
+  cout << "Chinese Characters: " << ans << endl << endl;
   cout << "Pinyin: " << pinyin << endl<<endl;
 }
 }
